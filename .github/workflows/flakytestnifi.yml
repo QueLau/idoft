@@ -29,8 +29,8 @@ jobs:
     - name: Move to the target folder
       run: cd nifi
 
-    - name: Git checkout
-      run: git checkout 2bd752d868a8f3e36113b078bb576cf054e945e8
+#    - name: Git checkout
+#     run: git checkout 2bd752d868a8f3e36113b078bb576cf054e945e8
 
     - name: Compile the test
       run: mvn install -DskipTests -am -pl nifi-nar-bundles/nifi-ldap-iaa-providers-bundle/nifi-ldap-iaa-providers
