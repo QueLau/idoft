@@ -1,11 +1,11 @@
-name: Test nifi
+name: Testnifi
 
 on: [push]
 
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout main branch
