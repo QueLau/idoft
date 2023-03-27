@@ -35,7 +35,7 @@ jobs:
        lfs: 2bd752d868a8f3e36113b078bb576cf054e945e8
 
     - name: Compile the test
-      run: mvn install -DskipTests -am -pl nifi-nar-bundles/nifi-ldap-iaa-providers-bundle/nifi-ldap-iaa-providers
+      run: mvn install -DskipTests -am -pl nifi/nifi-nar-bundles/nifi-ldap-iaa-providers-bundle/nifi-ldap-iaa-providers
 
     - name: Run the test without nondex
       run: mvn test -pl nifi-nar-bundles/nifi-ldap-iaa-providers-bundle/nifi-ldap-iaa-providers -Dtest=org.apache.nifi.ldap.tenants.LdapUserGroupProviderTest#testSearchGroupsWithNameAndUserIdentityCnAttribute
