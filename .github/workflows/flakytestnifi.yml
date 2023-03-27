@@ -11,15 +11,19 @@ jobs:
     - name: Checkout main branch
       uses: actions/checkout@v3
     
+    - name: Build with maven
+      uses: actions/cache@v2
+      env:
+       cache-name: cache-mvn-modules
+      with:
+       path: ~/.m2
+       
     - name: Set up JDK
       uses: actions/setup-java@v3
       with:
         java-version: '8'
         distribution: 'temurin'
         cache: 'maven'
-        
-    - name: Build with maven
-      run: mvn -B package --file.pom.xml
         
     - name: Set up Apache Maven Central
       uses: actions/setup-java@v1
