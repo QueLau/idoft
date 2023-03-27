@@ -14,14 +14,14 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v3
       with:
-        java-version: 8
-        distribution: temurin
+        java-version: '8'
+        distribution: 'temurin'
         cache: maven
         
     - name: Set up Apache Maven Central
       uses: actions/setup-java@v1
       with:
-        java-version: 8
+        java-version: '8'
 
     - name: Git clone
       run: git clone https://github.com/apache/nifi
