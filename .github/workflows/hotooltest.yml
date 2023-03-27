@@ -35,7 +35,8 @@ jobs:
        SHA: ec14f8384ad384fb6e054df722fe089d64af0c41
 
     - name: Compile the test
-      run: mvn install -DskipTests -am -pl hutool-core
+      run: mvn install -DskipTests -am -pl 
+      working-directory: <hutool-core>
 
     - name: Run the test without nondex
       run: mvn test -pl hutool-core -Dtest=cn.hutool.core.util.ReflectUtilTest#getMethodsFromInterfaceTest
