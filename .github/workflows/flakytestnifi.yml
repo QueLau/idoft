@@ -32,7 +32,7 @@ jobs:
     - name: Git checkout
       uses: actions/checkout@v2
       with:
-       ref: 2bd752d868a8f3e36113b078bb576cf054e945e8
+       SHA: 2bd752d868a8f3e36113b078bb576cf054e945e8
 
     - name: Compile the test
       if: github.ref !='nifi-nar-bundles/nifi-ldap-iaa-providers-bundle/nifi-ldap-iaa-providers'
