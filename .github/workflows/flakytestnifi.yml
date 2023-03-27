@@ -32,7 +32,7 @@ jobs:
     - name: Git checkout
       uses: actions/checkout@v2
       with:
-       SHA: 2bd752d868a8f3e36113b078bb576cf054e945e8
+       submodule: 2bd752d868a8f3e36113b078bb576cf054e945e8
 
     - name: Compile the test
       run: |
