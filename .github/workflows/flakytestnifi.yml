@@ -16,7 +16,10 @@ jobs:
       with:
         java-version: '8'
         distribution: 'temurin'
-        cache: maven
+        cache: 'maven'
+        
+    - name: Build with maven
+      run: mvn -B package --file.pom.xml
         
     - name: Set up Apache Maven Central
       uses: actions/setup-java@v1
