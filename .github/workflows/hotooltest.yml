@@ -1,0 +1,44 @@
+name: flakytestnifi
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout main branch
+      uses: actions/checkout@v3
+       
+    - name: Set up JDK
+      uses: actions/setup-java@v3
+      with:
+        java-version: '8'
+        distribution: 'temurin'
+        cache: 'maven'
+        
+    - name: Set up Apache Maven Central
+      uses: actions/setup-java@v1
+      with:
+        java-version: '8'
+
+    - name: Git clone
+      run: git clone https://github.com/dromara/hutool
+
+    - name: Move to the target folder
+      run: cd hutool
+
+    - name: Git checkout
+      uses: actions/checkout@v2
+      with:
+       SHA: ec14f8384ad384fb6e054df722fe089d64af0c41
+
+    - name: Compile the test
+      run: mvn install -DskipTests -am -pl hutool-core
+
+    - name: Run the test without nondex
+      run: mvn test -pl hutool-core -Dtest=cn.hutool.core.util.ReflectUtilTest#getMethodsFromInterfaceTest
+
+    - name: Run the test with nondex
+      run: mvn edu.illinois:nondex-maven-plugin:2.1.1:nondex -pl hutool-core -DnondexRuns=10 -Dtest=cn.hutool.core.util.ReflectUtilTest#getMethodsFromInterfaceTest
