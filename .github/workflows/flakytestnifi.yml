@@ -13,8 +13,6 @@ jobs:
     
     - name: Build with maven
       uses: actions/cache@v2
-      env:
-       cache-name: cache-mvn-modules
        
     - name: Set up JDK
       uses: actions/setup-java@v3
