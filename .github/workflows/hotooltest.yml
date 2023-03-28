@@ -36,7 +36,7 @@ jobs:
 
     - name: Compile the test
       run: mvn install -DskipTests -am -pl 
-      working-directory: <hutool-core>
+      working-directory: hutool-core
 
     - name: Run the test without nondex
       run: mvn test -pl hutool-core -Dtest=cn.hutool.core.util.ReflectUtilTest#getMethodsFromInterfaceTest
